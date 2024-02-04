@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Countrydemo</string>
+    <string name="capital">Capital</string>
+    <string name="official">official Name</string>
+    <string name="population">Population</string>
+    <string name="area">Area</string>
+    <string name="latlng">Latlng</string>
+    <string name="about">About the flag</string>
+
+
 </resources>
