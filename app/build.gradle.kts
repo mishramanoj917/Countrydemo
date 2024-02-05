@@ -90,10 +90,12 @@ dependencies {
     //Retrofit
 
     // coil with animation
-    implementation ("com.github.skydoves:landscapist-coil:2.2.13")
-    implementation ("com.github.skydoves:landscapist-placeholder:2.2.13")
-    implementation ("com.github.skydoves:landscapist-animation:2.2.13")
-    implementation ("com.github.skydoves:landscapist-transformation:2.2.13")
+    implementation("io.coil-kt:coil-compose:2.5.0")
+
+    //
+    implementation ("androidx.datastore:datastore-preferences:1.0.0")
+
+    implementation ("androidx.compose.runtime:runtime-livedata:1.7.0-alpha01")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

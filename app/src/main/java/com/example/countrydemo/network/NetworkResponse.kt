@@ -1,11 +1,7 @@
 package com.example.countrydemo.network
 
-sealed class NetworkResponse<T>(
-    val data: T? = null,
-    val message: String? = null
-)  {
-    class Success<T>(data: T):NetworkResponse<T>(data)
-    class Error<T>(message: String, data: T? = null): NetworkResponse<T>(data, message)
-    class Loading<T>:NetworkResponse<T>()
-
+sealed class NetworkResponse<out R> {
+    data class Success<out T>(val data: T) : NetworkResponse<T>()
+    data class Error(val exception: String) : NetworkResponse<Nothing>()
+    object Loading : NetworkResponse<Nothing>()
 }

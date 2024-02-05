@@ -1,17 +1,16 @@
 package com.example.countrydemo.data.model
 
-data class CountryList(
-    val flags: Flags,
-    val coatOfArms: CoatOfArms,
+data class Country(
     val name: Name,
+    val flags: Flags,
     val capital: ArrayList<String>,
-    val latlng :ArrayList<Long>,
-    val area: Long,
+    val region: String,
     val maps: Maps,
     val population:Long,
-    val timezones: ArrayList<String>
+    val timezones: ArrayList<String>,
+    val coatOfArms: CoatOfArms,
+    val status: String
     )
-
 data class Flags(
     val png: String,
     val svg: String,
