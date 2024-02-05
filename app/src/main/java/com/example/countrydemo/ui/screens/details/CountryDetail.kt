@@ -52,9 +52,7 @@ fun CountryDetail(
                     SetCountryDetail(country = it.data, navigationUp = navigationUp)
                 }
             }
-            else -> {
-
-            }
+            else -> { }
         }
     }
 }

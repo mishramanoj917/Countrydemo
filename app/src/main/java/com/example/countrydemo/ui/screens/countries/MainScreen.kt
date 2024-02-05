@@ -1,12 +1,12 @@
 package com.example.countrydemo.ui.screens.countries
 
 import android.annotation.SuppressLint
-import android.util.Log
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Scaffold
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
@@ -59,7 +59,7 @@ fun MainScreen(selectedCountry: (String) -> Unit) {
 
             is NetworkResponse.Error -> {
                 progressBar.value = false
-                Log.d("Error", it.exception)
+                Text(text = it.exception)
             }
 
             NetworkResponse.Loading -> {
