@@ -15,15 +15,28 @@ class CountriesRepository @Inject constructor(
     private val countriesRemoteDataSource: CountriesRemoteDataSource,
     private val countriesLocalDataSource: CountriesLocalDataSource
 ): NetworkCallWrapper() {
-    suspend fun getCountries(): Flow<NetworkResponse<List<Country>>>{
-        return flow {
+    suspend fun getCountries(): Flow<NetworkResponse<List<Country>>> = flow {
+        emit(NetworkResponse.Loading)
+        try {
             emit(safeApiCall { countriesRemoteDataSource.getCountries() })
-        }.flowOn(Dispatchers.IO)
-    }
+        } catch (e: Exception) {
+            emit(NetworkResponse.Error(exception = e.message.toString()))
+        }
+    }.flowOn(Dispatchers.IO)
 
-    suspend fun getCountry(name: String): Flow<Country?> {
-        return flow {
-            emit(countriesLocalDataSource.getCountry(name))
+    suspend fun getCountry(name: String): Flow<NetworkResponse<Country>> = flow {
+        emit(NetworkResponse.Loading)
+        try {
+            val country = countriesLocalDataSource.getCountry(name)
+            if (country == null) {
+                emit(NetworkResponse.Error(exception = "no data available"))
+            } else
+                emit(getCountry(country = country))
+        } catch (e: Exception) {
+            emit(NetworkResponse.Error(exception = e.message.toString()))
         }
     }
+
+    private fun getCountry(country: Country): NetworkResponse<Country> =
+        NetworkResponse.Success(country)
 }

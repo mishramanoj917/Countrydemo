@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.countrydemo.data.model.Country
 import com.example.countrydemo.data.repository.CountriesRepository
+import com.example.countrydemo.network.NetworkResponse
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -14,7 +15,7 @@ import javax.inject.Inject
 class CountryDetailViewModel @Inject constructor(
     private val countriesRepository: CountriesRepository
 ):ViewModel() {
-    val country: MutableState<Country?> = mutableStateOf(null)
+    val country: MutableState<NetworkResponse<Country>?> = mutableStateOf(null)
 
     fun fetchCountry(countryName: String) {
         viewModelScope.launch {

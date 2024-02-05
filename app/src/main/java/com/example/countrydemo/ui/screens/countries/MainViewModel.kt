@@ -1,4 +1,4 @@
-package com.example.countrydemo.ui.screens.mainscreen
+package com.example.countrydemo.ui.screens.countries
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf

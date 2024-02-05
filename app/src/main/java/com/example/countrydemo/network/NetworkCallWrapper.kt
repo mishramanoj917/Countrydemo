@@ -29,4 +29,5 @@ abstract class NetworkCallWrapper {
 
     private fun <T> error(errorMessage: String): NetworkResponse<T> =
         NetworkResponse.Error("Api call failed $errorMessage")
+
 }

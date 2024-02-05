@@ -9,11 +9,11 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.countrydemo.navigation.AppDestinations.COUNTRY_DETAIL_KEY
+import com.example.countrydemo.ui.screens.countries.MainScreen
 import com.example.countrydemo.ui.screens.details.CountryDetail
-import com.example.countrydemo.ui.screens.mainscreen.MainScreen
 
 private object AppDestinations{
-    const val COUNTRY_ROUTE= "mainscreen"
+    const val COUNTRY_ROUTE= "countries"
     const val COUNTRY_DETAIL_ROUTE = "details"
     const val COUNTRY_DETAIL_KEY ="name"
 }
