@@ -3,9 +3,11 @@ package com.example.countrydemo.ui.screens.components
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -79,13 +81,26 @@ fun CountryBody(
                 )
             }
         }
-        Text(
-            modifier = Modifier.padding(bottom = 8.dp),
-            text = stringResource(R.string.about),
-            color = SecondaryFontColor,
-            fontSize = 22.sp,
-            fontWeight = FontWeight.Medium
-        )
+        Row {
+            Text(
+                modifier = Modifier.padding(bottom = 8.dp),
+                text = stringResource(R.string.about),
+                color = SecondaryFontColor,
+                fontSize = 22.sp,
+                fontWeight = FontWeight.Medium
+            )
+            Spacer(modifier = Modifier.width(4.dp))
+            AsyncImage(
+                model = country.flags.png,
+                contentDescription = null,
+                modifier = Modifier
+                    .padding(2.dp)
+                    .size(24.dp),
+                contentScale = ContentScale.Inside,
+                placeholder = painterResource(id = R.drawable.placeholder)
+
+            )
+        }
         AboutText(
             text = country.flags.alt
         )

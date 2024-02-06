@@ -16,12 +16,12 @@ fun CountryInfo(title: String, info: String) {
     Column(modifier = Modifier.padding(start = 10.dp, bottom = 10.dp)) {
         Text(
             text = title,
-            color = SecondaryFontColor,
+            color = FontColor,
             fontSize = 15.sp,
             fontWeight = FontWeight.SemiBold
         )
         Text(
-            text = info, color = FontColor, fontSize = 16.sp
+            text = info, color = SecondaryFontColor, fontSize = 16.sp
         )
     }
 }

@@ -17,7 +17,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.countrydemo.data.model.Country
 import com.example.countrydemo.network.NetworkResponse
 import com.example.countrydemo.ui.screens.components.CircularIndeterminateProgressBar
-import com.example.countrydemo.ui.screens.components.CountryBody
+import com.example.countrydemo.ui.screens.components.CountryBodyNew
 import com.example.countrydemo.ui.screens.components.appbar.DetailAppBar
 
 @Composable
@@ -69,7 +69,7 @@ fun SetCountryDetail(
                     DetailAppBar(title = country.name.common, pressOnBack = navigationUp)
                 }
                 item {
-                    CountryBody(country = country)
+                    CountryBodyNew(country = country)
                 }
             }
         }

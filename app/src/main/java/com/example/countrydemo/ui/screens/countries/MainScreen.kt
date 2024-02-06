@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.countrydemo.network.NetworkResponse
 import com.example.countrydemo.ui.screens.components.CircularIndeterminateProgressBar
-import com.example.countrydemo.ui.screens.components.CountryCard
+import com.example.countrydemo.ui.screens.components.CountryCardNew
 import com.example.countrydemo.ui.screens.components.appbar.HomeAppBar
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
@@ -44,7 +44,7 @@ fun MainScreen(selectedCountry: (String) -> Unit) {
                         contentPadding = PaddingValues(16.dp)
                     ) {
                         items(countries) { it ->
-                            CountryCard(
+                            CountryCardNew(
                                 selectedCountry = selectedCountry,
                                 imagePath = it.flags.png,
                                 commonName = it.name.common,
